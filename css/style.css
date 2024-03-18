@@ -1,0 +1,9 @@
+.chairs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.model-viewer {
+    width: 100%;
+    height: 23rem;
+}
