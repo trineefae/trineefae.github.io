@@ -1,35 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" />
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <title> Chair Show </title>
-</head>
-
-<body>
-<h1> Industrial Design Chair </h1>
-<div class="chairs">
-<model-viewer src="./models/Picard.glb"
-              alt="Picard Chair"
-              ar
-              auto-rotate
-              camera-controls>
-</model-viewer>
-    <model-viewer src="./models/JRMY.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1.61" exposure="0.68">
-        <button class="Hotspot" slot="hotspot-1" data-position="0.22565592543614743m 0.5997969147278284m 0.5207428636233817m" data-normal="0.05135877377820711m 0.9985873071591711m 0.013625943512079639m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Side Table</div>
-        </button>
-    </model-viewer>    
-<model-viewer src="./models/Onsilla.glb"
-              alt="Picard Chair"
-              ar
-              auto-rotate
-              camera-controls>
-</model-viewer>
-</div>
-
-</body>
+   <head>
+      <!-- META TAGS -->
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- LINKED STYLESHEET & SCRIPT -->
+      <link rel="stylesheet" href="./css/style.css" />
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      <!-- PAGE TITLE -->
+      <title>Humber | Nienkämper</title>
+   </head>
+   <body>
+      <!-- HERO CONTENT -->
+      <header class="hero">
+         <!-- NAV BAR -->
+         <nav class="navbar">
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">Chairs</a></li>
+            </ul>
+         </nav>
+         <div class="hero-content">
+            <h1>Humber x Nienkämper</h1>
+            <p>Featuring chairs from Humber College's annual <br> Industrial Design Chair Show in collaboration with Nienkämper.</p>
+         </div>
+      </header>
+      <main>
+         <h2 class="section-title">Featured Chairs</h2>
+         <!-- 3 CHAIRS CONTAINER -->
+         <div class="chairs">
+            <!-- SITZPLATZ CONTAINER -->
+            <div class="chair">
+               <div class="chair-info">
+                  <h3 class="chair-name">Sitzplatz</h3>
+                  <p class="chair-description">Sink into comfort with this classic green chair.</p>
+               </div>
+               <!-- SITZPLATZ MODEL VIEWER -->
+               <model-viewer id="sitzplatz-viewer" src="./models/Sitzplatz.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" auto-rotate="0.5deg">
+                  <!-- SITZPLATZ MODEL VIEWER - HOTSPOTS -->
+                  <button class="Hotspot" slot="hotspot-1" data-position="-0.3490240757706735m 0.2856752090753593m 0.41991730949240536m" data-normal="0.9908279192083309m 0.06790140757258752m -0.11683078946472411m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Natural solid wood</div>
+                  </button>
+                  <button class="Hotspot" slot="hotspot-2" data-position="0.4115882998742864m 0.5882838382634576m -0.13104537746970552m" data-normal="0.9321215640008685m -0.12748793148185836m -0.33896344530207334m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Modern finish</div>
+                  </button>
+                  <button class="Hotspot" slot="hotspot-3" data-position="-0.271368705997628m 0.7993746586412794m -0.08088849514193575m" data-normal="0.4210315537941237m 0.18274420254329493m 0.8884463895736879m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">High-quality fabric</div>
+                  </button>
+                  <!-- SITZPLATZ MODEL VIEWER - CAMERA BUTTONS -->
+                  <div class="camera-view-buttons">
+                     <button onclick="changeCameraView('sitzplatz', 'top')">Top View</button>
+                     <button onclick="changeCameraView('sitzplatz', 'back')">Back View</button>
+                     <button onclick="resetCameraView('sitzplatz')">Reset View</button>        
+                  </div>
+               </model-viewer>
+               <!-- SITZPLATZ AR & QR INFO -->
+               <div class="ar-info-box">
+                  <div class="qr-code">
+                     <img src="/img/sitzplatz-qr.png">
+                  </div>
+                  <div class="ar-instructions">
+                     <p>Scan QR code to view in your space</p>
+                     <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR instructions">
+                  </div>
+               </div>
+            </div>
+            <!-- PICARD CONTAINER -->
+            <div class="chair">
+               <div class="chair-info">
+                  <h3 class="chair-name">Picard</h3>
+                  <p class="chair-description">This chair balances versatility with distinction.</p>
+               </div>
+               <!-- PICARD MODEL VIEWER -->
+               <model-viewer id="picard-viewer" src="./models/Picard.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" auto-rotate="0.5deg">
+                  <!-- PICARD MODEL VIEWER - HOTSPOTS -->
+                  <button class="Hotspot" slot="hotspot-1" data-position="-0.2779607739751242m 0.4735342120303816m 0.191871978833692m" data-normal="-0.035781764502534896m 0.9987377130666537m -0.035251181930198716m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Soft ridges</div>
+                  </button>
+                  <button class="Hotspot" slot="hotspot-2" data-position="-0.5001461235984688m 0.101967124554186m -0.024972557334967727m" data-normal="-0.7266469377006379m 0.10220696575221141m -0.679365854368625m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Oak wood</div>
+                  </button>
+                  <button class="Hotspot" slot="hotspot-3" data-position="-0.07527825159681306m 0.7408959565797408m -0.3220857548265421m" data-normal="-0.5023099314236192m -0.0018565858365045711m 0.8646856572664025m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Quality fabric</div>
+                  </button>
+                  <!-- PICARD MODEL VIEWER - CAMERA BUTTONS -->
+                  <div class="camera-view-buttons">
+                     <button onclick="changeCameraView('picard', 'top')">Top View</button>
+                     <button onclick="changeCameraView('picard', 'back')">Back View</button>
+                     <button onclick="resetCameraView('picard')">Reset View</button>        
+                  </div>
+               </model-viewer>
+               <!-- PICARD AR & QR INFO -->
+               <div class="ar-info-box">
+                  <div class="qr-code">
+                     <img src="/img/picard-qr.png">
+                  </div>
+                  <div class="ar-instructions">
+                     <p>Scan QR code to view in your space</p>
+                     <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR instructions">
+                  </div>
+               </div>
+            </div>
+            <!-- JRMY CONTAINER -->
+            <div class="chair">
+               <div class="chair-info">
+                  <h3 class="chair-name">JRMY</h3>
+                  <p class="chair-description">A modern chair mixing comfort, design, and functionality.</p>
+               </div>
+               <!-- JRMY MODEL VIEWER -->
+               <model-viewer id="jrmy-viewer" src="./models/JRMY.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" auto-rotate="0.5deg" camera-orbit="50deg 80deg 3.351m" field-of-view="30deg">
+                  <!-- JRMY MODEL VIEWER - HOTSPOTS -->
+                  <button class="Hotspot" slot="hotspot-1" data-position="0.17897387032060194m 0.5803149740118436m 0.7358229653832965m" data-normal="-0.11590088621304848m 0.1465505710683201m 0.9823898995279722m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Collapsible arm rest</div>
+                  </button>
+                  <button class="Hotspot" slot="hotspot-2" data-position="0.41161682315422915m 0.13135037211974854m -0.33265550869202054m" data-normal="0.993439034593151m 0.022107954514231018m 0.11220571685001185m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Modern design</div>
+                  </button>
+                  <button class="Hotspot" slot="hotspot-3" data-position="0.16932172435180856m 0.11841353714572081m 0.28956151904579835m" data-normal="-0.2896661047403013m 0.20403229193779204m 0.9351279974480459m" data-visibility-attribute="visible">
+                     <div class="HotspotAnnotation">Additional storage</div>
+                  </button>
+                  <!-- JRMY MODEL VIEWER - CAMERA BUTTONS -->
+                  <div class="camera-view-buttons">
+                     <button onclick="changeCameraView('jrmy', 'top')">Top View</button>
+                     <button onclick="changeCameraView('jrmy', 'back')">Back View</button>
+                     <button onclick="resetCameraView('jrmy')">Reset View</button>        
+                  </div>
+               </model-viewer>
+               <!-- JRMY AR & QR INFO -->
+               <div class="ar-info-box">
+                  <div class="qr-code">
+                     <img src="/img/jrmy-qr.png">
+                  </div>
+                  <div class="ar-instructions">
+                     <p>Scan QR code to view in your space</p>
+                     <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR instructions">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!-- FOOTER -->
+      <footer class="footer">
+         <p>&copy; 2024 Trinee. All rights reserved.</p>
+      </footer>
+      <!-- JAVASCRIPT -->
+      <script>
+         function changeCameraView(viewerId, view) {
+             const viewer = document.getElementById(viewerId + '-viewer');
+             switch (view) {
+                 case 'top':
+                     viewer.cameraOrbit = '0deg 0deg 1m';
+                     break;
+                 case 'back':
+                     viewer.cameraOrbit = '180deg 100deg 1m';
+                     break;
+                 default:
+                     break;
+             }
+         }
+         
+         function resetCameraView(viewerId) {
+             const viewer = document.getElementById(viewerId + '-viewer');
+             viewer.cameraOrbit = 'auto auto auto';
+         }
+      </script>
+   </body>
 </html>
